@@ -12,44 +12,55 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            body: Container(
-              color: white,
-              alignment: Alignment.center,
-              child: SingleChildScrollView(
-                child: Builder(builder: (context) {
-                  return SizedBox(
-                    height: 1000,
-                    width: 1000,
-                    child: Builder(builder: (context) {
-                     
-                      return PageView(
-                        physics:  const BouncingScrollPhysics(),
-                        scrollDirection: Axis.vertical,
-                        children:  [
-                         Padding(
-                           padding: const EdgeInsets.only(bottom: 800),
-                           child: Container(
+      body: Container(
+        color: white,
+        alignment: Alignment.center,
+        child: SingleChildScrollView(
+          child: Builder(builder: (context) {
+            return SizedBox(
+              height: 1000,
+              width: 1000,
+              child: Builder(builder: (context) {
+                return PageView(
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 800),
+                      child: Column(
+                        children: [
+                          Container(
                             color: canvasColor,
-                             child: const Padding(
-                               padding: EdgeInsets.all(10),
-                               child: Image(
-                                  image: AssetImage("images/aclcmandaue.png"),
-                                ),
-                             ),
-                           ),
-                         ),
-
+                            child: const Padding(
+                              padding: EdgeInsets.all(20),
+                              child: Image(
+                                image: AssetImage("images/aclcmandaue.png"),
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(10),
+                            child: FittedBox(
+                              fit: BoxFit.contain,
+                              child: Text(
+                                'A member of the AMA Education System',
+                                style: TextStyle(fontSize: 17, color: textColor),
+                              ),
+                            ),
+                          )
                         ],
-                      );
-                    }),
-                  );
-                }),
-              ),
-            ),
-          );
+                      ),
+                    ),
+                  ],
+                );
+              }),
+            );
+          }),
+        ),
+      ),
+    );
   }
 }
-
 
 const textColor = Color.fromARGB(255, 236, 28, 36);
 const primaryColor = Colors.white;
