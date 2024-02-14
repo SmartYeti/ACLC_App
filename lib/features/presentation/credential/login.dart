@@ -1,5 +1,5 @@
 import 'package:aclc_app/core/utils/guard.dart';
-import 'package:aclc_app/features/presentation/home.dart';
+import 'package:aclc_app/features/presentation/landing_page.dart';
 // import 'package:aclc_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
             //         return _loadingWidget();
             //       }
             //       return
-          Container(
+            Container(
           color: canvasColor,
           alignment: Alignment.center,
           child: SingleChildScrollView(
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                     padding: const EdgeInsets.all(30.0),
                     child: Column(
                       children: <Widget>[
-                         const SizedBox(
+                        const SizedBox(
                           height: 100,
                           child: Text(
                             'Login',
@@ -101,7 +101,8 @@ class _LoginPageState extends State<LoginPage> {
                                   padding: const EdgeInsets.all(8.0),
                                   decoration: const BoxDecoration(
                                       border: Border(
-                                          bottom: BorderSide(color: textColor))),
+                                          bottom:
+                                              BorderSide(color: textColor))),
                                   child: TextFormField(
                                       // validator: (String? val) {
                                       //   return Guard.againstInvalidEmail(val, 'Email');
@@ -109,16 +110,18 @@ class _LoginPageState extends State<LoginPage> {
                                       autovalidateMode:
                                           AutovalidateMode.onUserInteraction,
                                       controller: _emailController,
-                                      decoration:  const InputDecoration(
+                                      decoration: const InputDecoration(
                                           prefixIcon: Icon(
                                             Icons.person,
                                             color: textColor,
                                           ),
                                           border: InputBorder.none,
                                           hintText: "USN",
-                                          hintStyle: TextStyle(color: textColor)),
+                                          hintStyle:
+                                              TextStyle(color: textColor)),
                                       validator: (String? val) {
-                                        return Guard.againstEmptyString(val, 'USN');
+                                        return Guard.againstEmptyString(
+                                            val, 'USN');
                                       }
                                       //   validator: (String? val) {
                                       //   return Guard.againstEmptyString(val, 'Username');
@@ -144,7 +147,7 @@ class _LoginPageState extends State<LoginPage> {
                                           border: InputBorder.none,
                                           hintText: "Password",
                                           hintStyle:
-                                               const TextStyle(color: textColor),
+                                              const TextStyle(color: textColor),
                                           suffixIcon: IconButton(
                                             icon: Icon(
                                               _isObscure
@@ -181,7 +184,8 @@ class _LoginPageState extends State<LoginPage> {
                             shape: MaterialStateProperty.resolveWith((states) =>
                                 RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10))),
-                            overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                            overlayColor:
+                                MaterialStateProperty.resolveWith<Color?>(
                               (Set<MaterialState> states) {
                                 if (states.contains(MaterialState.hovered)) {
                                   return hoverColor; //<-- SEE HERE
@@ -196,19 +200,18 @@ class _LoginPageState extends State<LoginPage> {
                           child: const SizedBox(
                             height: 50,
                             child: Center(
-                              child: Text(
-                                "Next",
-                
-                                style: TextStyle(color: white)
-                
-                                // style: TextStyle(
-                                //     color: Colors.white, fontWeight: FontWeight.bold),
-                              ),
+                              child: Text("Next", style: TextStyle(color: white)
+
+                                  // style: TextStyle(
+                                  //     color: Colors.white, fontWeight: FontWeight.bold),
+                                  ),
                             ),
                           ),
                           onPressed: () {
-                            Navigator.push(context, 
-                            MaterialPageRoute(builder: (context) => HomePage()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const LandingPage()));
                             // _login(context);
                           },
                         ),
@@ -273,11 +276,11 @@ class _LoginPageState extends State<LoginPage> {
   //   }
   // }
 
-  Widget _loadingWidget() {
-    return const Center(
-      child: CircularProgressIndicator(),
-    );
-  }
+  // Widget _loadingWidget() {
+  //   return const Center(
+  //     child: CircularProgressIndicator(),
+  //   );
+  // }
 
   // void _login(BuildContext context) {
   //   if (_formKey.currentState!.validate()) {

@@ -1,14 +1,15 @@
+import 'package:aclc_app/features/presentation/view/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class LandingPage extends StatefulWidget {
+  const LandingPage({super.key});
 
   @override
-  State<HomePage> createState() => _SidebarXExampleAppState();
+  State<LandingPage> createState() => _SidebarXExampleAppState();
 }
 
-class _SidebarXExampleAppState extends State<HomePage> {
+class _SidebarXExampleAppState extends State<LandingPage> {
   final _controller = SidebarXController(selectedIndex: 0, extended: true);
   final _key = GlobalKey<ScaffoldState>();
 
@@ -32,21 +33,23 @@ class _SidebarXExampleAppState extends State<HomePage> {
                         _key.currentState?.openDrawer();
                       },
                       icon: const Icon(
-                        Icons.menu,
+                        Icons.menu_rounded,
                         color: textColor,
                       ),
                     ),
                     actions: const [
                       Padding(
                         padding: EdgeInsets.only(right: 10),
-                        child: Tooltip(message: 'Student',
-                        
-                        textStyle: TextStyle(color: textColor),
-                        child: Icon(Icons.person, color: textColor,),),
+                        child: Tooltip(
+                          message: 'Student',
+                          textStyle: TextStyle(color: textColor),
+                          child: Icon(
+                            Icons.person,
+                            color: textColor,
+                          ),
+                        ),
                       )
                     ],
-
-                    
                   )
                 : null,
 
@@ -103,8 +106,7 @@ class _SidebarXExampleAppState extends State<HomePage> {
                   height: 100,
                   child: Padding(
                     padding: EdgeInsets.all(16.0),
-                    child: 
-                    Image(image: AssetImage("images/ACLC_Logo.png"))
+                    child: Image(image: AssetImage("images/ACLC_Logo.png"))
                     // Text('Image', selectionColor: Colors.white,)
                     // Image.asset('assets/images/avatar.png')
                     ,
@@ -113,13 +115,62 @@ class _SidebarXExampleAppState extends State<HomePage> {
               },
               items: [
                 SidebarXItem(
-                  iconWidget: 
-                  const Icon(
-                    Icons.dashboard_outlined, 
-                    color: textColor,),
+                  iconWidget: const Icon(
+                    Icons.home_rounded,
+                    color: textColor,
+                  ),
                   // icon: Icons.dashboard,
-                  
-                  label: 'Dashboard',
+
+                  label: 'Home',
+                  onTap: () {
+                    // debugPrint('Home');
+                  },
+                ),
+
+                SidebarXItem(
+                  iconWidget: const Icon(
+                    Icons.campaign_rounded,
+                    color: textColor,
+                  ),
+                  // icon: Icons.dashboard,
+
+                  label: 'News',
+                  onTap: () {
+                    // debugPrint('Home');
+                  },
+                ),
+                SidebarXItem(
+                  iconWidget: const Icon(
+                    Icons.menu_book_rounded,
+                    color: textColor,
+                  ),
+                  // icon: Icons.dashboard,
+
+                  label: 'Courses',
+                  onTap: () {
+                    // debugPrint('Home');
+                  },
+                ),
+                SidebarXItem(
+                  iconWidget: const Icon(
+                    Icons.badge_rounded,
+                    color: textColor,
+                  ),
+                  // icon: Icons.dashboard,
+
+                  label: 'Registrar',
+                  onTap: () {
+                    // debugPrint('Home');
+                  },
+                ),
+                SidebarXItem(
+                  iconWidget: const Icon(
+                    Icons.credit_card_rounded,
+                    color: textColor,
+                  ),
+                  // icon: Icons.dashboard,
+
+                  label: 'Cashier',
                   onTap: () {
                     // debugPrint('Home');
                   },
@@ -132,13 +183,13 @@ class _SidebarXExampleAppState extends State<HomePage> {
                 //   },
                 // ),
                 SidebarXItem(
-                  iconWidget: 
-                  const Icon(
-                    Icons.info_outline, 
-                    color: textColor,),
+                  iconWidget: const Icon(
+                    Icons.info_outline,
+                    color: textColor,
+                  ),
                   // icon: Icons.dashboard,
-                  
-                  label: 'Info',
+
+                  label: 'About Us',
                   onTap: () {
                     // debugPrint('Home');
                   },
@@ -150,12 +201,24 @@ class _SidebarXExampleAppState extends State<HomePage> {
               ],
               footerItems: [
                 SidebarXItem(
-                  iconWidget: 
-                  const Icon(
-                    Icons.power_settings_new_rounded, 
-                    color: textColor,),
+                  iconWidget: const Icon(
+                    Icons.settings,
+                    color: textColor,
+                  ),
                   // icon: Icons.dashboard,
-                  
+
+                  label: 'Settings',
+                  onTap: () {
+                    // debugPrint('Home');
+                  },
+                ),
+                SidebarXItem(
+                  iconWidget: const Icon(
+                    Icons.power_settings_new_rounded,
+                    color: textColor,
+                  ),
+                  // icon: Icons.dashboard,
+
                   label: 'Logout',
                   onTap: () {
                     // debugPrint('Home');
@@ -222,65 +285,65 @@ class _SidebarXExampleAppState extends State<HomePage> {
                         height: 100,
                         child: Padding(
                           padding: EdgeInsets.all(16.0),
-                          child: 
-                    Image(image: AssetImage("images/ACLC_Logo.png"))
-                    // Text('Image', selectionColor: Colors.white,)
-                    // Image.asset('assets/images/avatar.png')
-                    ,
-                  ),
-                );
-              },
-              items: [
-                SidebarXItem(
-                  iconWidget: 
-                  const Icon(
-                    Icons.dashboard_outlined, 
-                    color: textColor,),
-                  // icon: Icons.dashboard,
-                  
-                  label: 'Dashboard',
-                  onTap: () {
-                    // debugPrint('Home');
-                  },
-                ),
-                // SidebarXItem(
-                //   icon: Icons.search,
-                //   label: 'Search',
-                //   onTap: () {
-                //     // debugPrint('Search');
-                //   },
-                // ),
-                SidebarXItem(
-                  iconWidget: 
-                  const Icon(
-                    Icons.info_outline, 
-                    color: textColor,),
-                  // icon: Icons.dashboard,
-                  
-                  label: 'Info',
-                  onTap: () {
-                    // debugPrint('Home');
-                  },
-                ),
-                // const SidebarXItem(
-                //   icon: Icons.favorite,
-                //   label: 'Favorites',
-                // ),
-              ],
-              footerItems: [
-                SidebarXItem(
-                  iconWidget: 
-                  const Icon(
-                    Icons.power_settings_new_rounded, 
-                    color: textColor,),
-                  // icon: Icons.dashboard,
-                  
-                  label: 'Logout',
-                  onTap: () {
-                    // debugPrint('Home');
-                  },
-                )
-              ],
+                          child:
+                              Image(image: AssetImage("images/ACLC_Logo.png"))
+                          // Text('Image', selectionColor: Colors.white,)
+                          // Image.asset('assets/images/avatar.png')
+                          ,
+                        ),
+                      );
+                    },
+                    items: [
+                      SidebarXItem(
+                        iconWidget: const Icon(
+                          Icons.dashboard_outlined,
+                          color: textColor,
+                        ),
+                        // icon: Icons.dashboard,
+
+                        label: 'Dashboard',
+                        onTap: () {
+                          // debugPrint('Home');
+                        },
+                      ),
+                      // SidebarXItem(
+                      //   icon: Icons.search,
+                      //   label: 'Search',
+                      //   onTap: () {
+                      //     // debugPrint('Search');
+                      //   },
+                      // ),
+                      SidebarXItem(
+                        iconWidget: const Icon(
+                          Icons.info_outline,
+                          color: textColor,
+                        ),
+                        // icon: Icons.dashboard,
+
+                        label: 'Info',
+                        onTap: () {
+                          // debugPrint('Home');
+                        },
+                      ),
+                      // const SidebarXItem(
+                      //   icon: Icons.favorite,
+                      //   label: 'Favorites',
+                      // ),
+                    ],
+                    footerItems: [
+                      SidebarXItem(
+                        iconWidget: const Icon(
+                          Icons.power_settings_new_rounded,
+                          color: textColor,
+                        ),
+                        // icon: Icons.dashboard,
+
+                        label: 'Logout',
+                        onTap: () {
+                          // debugPrint('Home');
+                        },
+                      )
+                    ],
                   )
                 // ExampleSidebarX(controller: _controller)
                 ,
@@ -368,6 +431,7 @@ class _ScreensExampleState extends State<_ScreensExample> {
         final pageTitle = _getTitleByIndex(widget.controller.selectedIndex);
         switch (widget.controller.selectedIndex) {
           case 0:
+            return const HomePage();
           case 1:
           default:
             return Text(
@@ -383,11 +447,23 @@ class _ScreensExampleState extends State<_ScreensExample> {
 String _getTitleByIndex(int index) {
   switch (index) {
     case 0:
-      return 'Dashboard';
+      return 'Home';
+    case 1:
+      return 'News';
     // case 1:
     //   return 'Search';
-    case 1:
-      return 'Info';
+    case 2:
+      return 'Courses';
+    case 3:
+      return 'Registrar';
+    case 4:
+      return 'Cashier';
+    case 5:
+      return 'About Us';
+    case 6:
+      return 'Settings';
+    case 7:
+      return 'Logout';
     // case 3:
     //   return 'Favorites';
     // // case 4:
